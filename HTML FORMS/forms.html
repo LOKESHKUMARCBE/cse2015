@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: arial, verdana, sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+fieldset {
+  padding: 10px;
+  width: 550px;
+}
+
+label {
+  width: 170px;
+  float: left;
+  text-align: right;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 350px;
+  float: left;
+}
+
+input {
+  border-style: solid;
+  border-color: #666666;
+  border-width: 1px;
+  background-color: #f2f2f2;
+  font-size: 100%;
+}
+
+input:focus {
+  border-style: solid;
+  border-color: #333333;
+  border-width: 1px;
+  background-color: #ffffcc;
+}
+
+.submit {
+  clear: both;
+  margin-left: 170px;
+}
+
+.submit input {
+  cursor: pointer;
+}
+
+.small {
+  font-size: 10px;
+}
+
+.required {
+  font-weight: bold;
+  font-size: 20px;
+  color: #ff0000;
+}
+
+/* added for the exercises at the end of the chapter */
+.steps {
+  list-style-type: none;
+}
+
+.steps li {
+  display: inline;
+  float: left;
+  width: 100px;
+  margin: 20px;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+
+.steps .on {
+  border: 1px solid #666666;
+  background-color: #efefef;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.next {
+  float: right;
+}
+
+.clear {
+  clear: both;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+
+  <form name="frmExample" action="" method="post">
+    <fieldset>
+      <legend>Register with us:</legend>
+
+      <label for="fname">First name: <span class="required">*</span></label>
+      <div class="input">
+        <input type="text" name="txtFirstName" id="fname" size="12" />
+      </div>
+
+      <label for="lname">Last name: <span class="required">*</span></label>
+      <div class="input">
+        <input type="text" name="txtLastName" id="lname" size="12" />
+      </div>
+
+      <label for="email">E-mail address: <span class="required">*</span></label>
+      <div class="input">
+        <input type="password" name="txtEmail" id="email" size="20" />
+      </div>
+
+      <label for="pwd">Password: <span class="required">*</span></label>
+      <div class="input">
+        <input type="password" name="txtPassword" id="pwd" size="12" /><span
+          class="small">&nbsp;must be between 6 and 12 characters long</span>
+      </div>
+
+      <label for="pwdConf">Password: <span class="required">*</span></label>
+      <div class="input">
+        <input type="password" name="txtPassword" id="pwdconf" size="12" /><span
+          class="small">&nbsp;must be between 6 and 12 characters long</span>
+      </div>
+
+
+
+      <div class="submit">
+        <input type="submit" value="Register" /><br />
+      </div>
+      <span class="required">*</span> = required
+
+    </fieldset>
+
+  </form>
+
+</body>
+</html>
