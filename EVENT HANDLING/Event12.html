@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<TITLE> Deposit calculator</TITLE>
+<body>
+<form name="calculator">
+    <table>
+      <tr>
+        <td>Initial deposit</td>
+        <td>
+          <input name="money" type="number" value="500" required>
+        </td>
+      </tr>
+      <tr>
+        <td>How many months?</td>
+        <td>
+          <select name="months">
+            <option value="3">3 </option>
+            <option value="6">6 </option>
+            <option value="12">12</option>
+            <option value="18">15 </option>
+           
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Interest per year?</td>
+        <td>
+          <input name="interest" type="number" value="5" required>
+        </td>
+      </tr>
+    </table>
+</form>
+
+<table id="diagram">
+    <tr>
+      <th>DEPOSITED:</th>
+      <th>WITH RETURN</th>
+    </tr>
+    <tr>
+      <th id="beforedeposit"></th>
+      <th id="afterdeposit"></th>
+    </tr>
+    
+    <td>
+      <div  id="value-after"></div>
+    </td>
+  </table>
+
+  <script>
+
+    var form = document.forms.calculator;
+
+    form.money.oninput = calculate;
+    form.months.onchange = calculate;
+    form.interest.oninput = calculate;
+
+    function calculate() {
+      var initial = +form.money.value;
+      if (!initial) return;
+
+      var interest = form.interest.value * 0.01;
+
+      if (!interest) return;
+
+      var years = form.months.value / 12;
+      if (!years) return;
+
+      var result = Math.round(initial * (1 + interest) ** years);
+
+      var height = result / form.money.value * 100 + 'px';
+      document.getElementById('value-after').style.height = height;
+      document.getElementById('beforedeposit').innerHTML = form.money.value;
+      document.getElementById('afterdeposit').innerHTML = result;
+    }
+
+  calculate();
+  </script>
+</body>
+</html>

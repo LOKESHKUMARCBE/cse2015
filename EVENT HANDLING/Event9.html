@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type = "text/javascript">
+function displaytime()
+{
+var d = new Date();
+var t = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+document.myform.timetext.value=t;
+setInterval("displaytime()",1000)
+}
+</script>
+</head>
+<body onload ="displaytime()">
+<form name = "myform">
+<input type = "text" name ="timetext" size = "8">
+</form>
+</body>
+</html>

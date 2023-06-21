@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function writeX(evnt) {
+   document.write("Capturing" + evnt.target + " " + evnt.currentTarget);
+   return true;
+}
+function setup(evnt) {
+   document.addEventListener('click',writeX,true);
+   document.forms[0].addEventListener('click',writeX,true);
+   document.forms[0].elements[0].addEventListener('click',writeX,true);
+
+}
+
+setup();
+</script>
+<body>
+<form>
+     <input type="submit" value="Submit" /><br>
+</form>
+</body>
+</html>

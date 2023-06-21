@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE>An event of my own!</TITLE>
+<SCRIPT>
+
+function FormData (name, text1, text2) {
+   this.name = name;
+   this.text1 = text1;
+   this.text2 = text2;
+}
+FormData.prototype.toString = function () {
+   return this.name;
+}
+
+function on_Same () {
+   alert("The two values are the same!");
+}
+
+function check_Same() {
+   if (this.text1 == this.text2) {
+       this.onSame();
+   }
+}
+
+FormData.prototype.checkSame = check_Same;
+FormData.prototype.onSame = on_Same;
+
+function createFormData (name, text1, text2) {
+   var x = new FormData (name, text1, text2);
+   x.checkSame();
+}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM>
+Name your object:<input type=text name="txtName">
+Enter first text:<input type=text name="txtFirst">
+Enter second text:<input type=text name="txtSecond">
+<input type=button value="Do It!"
+   onClick="createFormData (txtName.value, txtFirst.value, txtSecond.value);">
+</FORM>
+</BODY>
+</HTML>
