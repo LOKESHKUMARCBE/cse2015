@@ -1,0 +1,5 @@
+body {background-color: Red; font-family: Arial}
+a:link {color: Blue}
+a:visited {color: LightBrown}
+a:hover {color: White}
+a:active {color: Brown}
